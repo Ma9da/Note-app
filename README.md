@@ -1,2 +1,2 @@
 # Note-app
-a simple not app that helps you to track your daily tasks
+A simple note app that helps you to track your daily tasks
