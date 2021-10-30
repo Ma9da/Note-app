@@ -1,2 +1,2 @@
-# Note-app
-A simple note app that helps you to track your daily tasks
+# To do List
+A simple to do list created with Janilla JS
