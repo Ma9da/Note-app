@@ -3,12 +3,18 @@ var addBtn = document.getElementById("main__todo-btn") //add button
 var list = document.getElementById("main__tasks-list") // html ul
 //on click add task
 addBtn.onclick = addTask
+input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addBtn.click();
+    }
+});
 //add task
 function addTask() {
     var inputValue = input.value
-    if(inputValue != ""){
+    if (inputValue != "") {
         addDom(inputValue)
-    }else{
+    } else {
         alert("Please enter a task to add")
         input.classList.add("main__todo-empty-input")
     }
@@ -33,7 +39,7 @@ function addDom(value) {
 //cross out from dom
 function crossDom(doneVal) {
     var done = doneVal.currentTarget.parentNode
-    done.style.textDecoration ="line-through"
+    done.style.textDecoration = "line-through"
 }
 // delet
 function deleteDome(doneVal) {
@@ -41,12 +47,12 @@ function deleteDome(doneVal) {
     done.style.display = "none"
 }
 function showDate() {
-    var weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date().getDay()]    
+    var weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date().getDay()]
     var d = new Date();
     var year = d.getFullYear()
-    var month = d.getMonth() 
+    var month = d.getMonth()
     var day = d.getDate()
-    var date = weekday +" "+ day + '/ ' + (month + 1) + '/ ' + year;
+    var date = weekday + " " + day + '/ ' + (month + 1) + '/ ' + year;
     document.getElementById("main__todo-date").innerHTML = date
 }
 showDate()
