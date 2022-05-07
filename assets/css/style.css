@@ -96,6 +96,21 @@ ul{
     border: none;
     background-color: #ff6666;
 }
+.main__tasks-btn2{
+    float: right;
+    background: none;
+    /* height: 25px;
+    width: 25px; */
+    margin: 0 15px ;
+    border: 0;
+    text-transform: capitalize;
+}
+.main__tasks-btn2::after{
+    content: "";
+    background: url('https://img.icons8.com/material-rounded/24/000000/trash.png') no-repeat;
+    padding: 4px 13px;
+    color: #8989e5;
+}
 .main__tasks-item{
     text-transform: capitalize;
     padding: 10px 15px;

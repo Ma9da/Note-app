@@ -18,11 +18,15 @@ function addDom(value) {
     var li = document.createElement("li")
     li.innerHTML = value
     li.className = "main__tasks-item"
-    var button = document.createElement("button")
-    button.className = "main__tasks-btn"
-    button.innerText = "X"
-    button.onclick = crossDom
-    li.appendChild(button)
+    var buttonCross = document.createElement("button")
+    var buttonDelete = document.createElement("button")
+    buttonCross.className = "main__tasks-btn"
+    buttonDelete.className = "main__tasks-btn2"
+    buttonCross.innerText = "X"
+    buttonDelete.onclick = deleteDome
+    buttonCross.onclick = crossDom
+    li.appendChild(buttonCross)
+    li.appendChild(buttonDelete)
     list.appendChild(li)
     document.getElementById("main__todo-input").value = null;
 }
@@ -30,6 +34,11 @@ function addDom(value) {
 function crossDom(doneVal) {
     var done = doneVal.currentTarget.parentNode
     done.style.textDecoration ="line-through"
+}
+// delet
+function deleteDome(doneVal) {
+    var done = doneVal.currentTarget.parentNode
+    done.style.display = "none"
 }
 function showDate() {
     var weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date().getDay()]    
