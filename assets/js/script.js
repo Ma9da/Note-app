@@ -14,8 +14,8 @@ function addTask() {
     var inputValue = input.value
     if (inputValue != "") {
         addDom(inputValue)
+        input.classList.remove("main__todo-empty-input")
     } else {
-        alert("Please enter a task to add")
         input.classList.add("main__todo-empty-input")
     }
 }
